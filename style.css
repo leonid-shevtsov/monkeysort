@@ -1,0 +1,59 @@
+body {
+  font-family: sans-serif;
+}
+
+#ask {
+  display: none
+}
+
+#results {
+  display: none
+}
+
+#wrapper {
+  width: 960px;
+  margin: 0 auto;
+}
+
+header, footer, h1, h2, .centered { text-align: center }
+
+h1 { font-size: 4em}
+
+header { margin-bottom: 2em }
+footer { margin-top: 2em }
+
+#items {
+  font-size: 1em;
+  font-family: sans-serif;
+  width: 640px;
+  height: 300px;
+  margin: 0 auto;
+  display: block;
+}
+
+button {
+  font-size: 1.5em;
+  font-family: sans-serif;
+}
+
+.ask_answer {
+  font-size: 1.5em;
+  font-weight: bold;
+  padding: .5em;
+  display: block;
+  text-align: center;
+  width: 640px;
+  margin: 1em auto;
+}
+
+.ask_answer.dontcare {
+  font-size: 1em;
+  font-weight: normal;
+  width: 200px;
+}
+
+#results_list {
+  width: 400px;
+  margin: 0 auto;
+  font-size: 1.2em;
+}

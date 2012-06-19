@@ -3,6 +3,7 @@ function ComparisonMatrix(items) {
   var self = this;
   self.items = items;
   self.matrix = {};
+  self.explicitCount = 0;
     
   _.each(self.items, function(item) {
     self.matrix[item] = {};
@@ -22,6 +23,7 @@ function ComparisonMatrix(items) {
   };
 
   self.set = function(a, b, value) {
+    self.explicitCount++;
     self.updateSingle(a, b, value);
     self.updateSingle(b, a, self.opposite(value));
   };
@@ -35,7 +37,7 @@ function ComparisonMatrix(items) {
     if (self.matrix[a][b] == '=') {
       // ((Cij = “=”) ⋀ (Cjk is known)) ⇒ Cik = Cjk
       _.each(_.keys(self.matrix[b]), function(c) {
-        if (!matrix[a][c]) {
+        if (!self.matrix[a][c]) {
           self.updateSingle(a, c, self.matrix[b][c]);
         }
       });
@@ -102,6 +104,7 @@ $(function() {
   }
 
   function askUser(a, b) {
+    $('#input').hide();
     $('#ask').show();
     $('#ask_a').text(a);
     $('#ask_b').text(b);
@@ -117,7 +120,20 @@ $(function() {
   });
 
   function showResults() {
-    console.log(items);
+    $('#input').hide();
+    $('#ask').hide();
+    $('#results').show();
+    $('#results_list').html();
+    $('#explicit_count').text(matrix.explicitCount);
+    _(items).each(function(item) {
+      $('<li />').appendTo($('#results_list')).text(item);
+    });
   }
+
+  $('#start_over').click(function(e) {
+    e.preventDefault();
+    $('#results').hide();
+    $('#input').show();
+  });
 });
 
