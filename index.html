@@ -9,31 +9,24 @@
   </head>
   <body>
     <h1>MonkeySort</h1>
-    <p>This is an experiment in human-driven sorting.</p>
-    <p>Reason: it's hard for a human to sort many things from most favorable to least favorable. At best
-    you can implement a SelectionSort algorithm by picking your most favorite thing of all, then the second favorite,
-    et cetera.</p>
-    <p>This method is not effective and prone to error.</p>
-    <p>MonkeySort implements an algorithm with minimal number of comparisons, and you only have to pick a favorite from <i>two</i> things.
     <label>Make a list of items to be sorted, one per line.</label>
     <br>
     <textarea id="items" rows="20" cols="80">
-      b
-      c
-      d
-      gh
-      asd
-
+good
+best
+better
+worst
+worse
     </textarea>
     <br>
     <input type="submit" id="submit" value="Sort it">
     <div id="ask" style="display:none">
       Pick one:
-      <a id="ask_a" href="#" data-result="1" class="ask_answer">
+      <a id="ask_a" href="#" data-result=">" class="ask_answer">
       </a>
-      <a id="ask_b" href="#" data-result="-1" class="ask_answer">
+      <a id="ask_b" href="#" data-result="<" class="ask_answer">
       </a>
-      <a href="#" data-result="0" class="ask_answer">
+      <a href="#" data-result="=" class="ask_answer">
         don't care
       </a>
     </div>
