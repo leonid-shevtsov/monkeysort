@@ -1,3 +1,3 @@
 # Monkeysort, a human-driven sort utility
 
-http://leonid.shevtsov.me/en/a-human-driven-sort-algorithm-monkeysort
+https://leonid.shevtsov.me/post/a-human-driven-sort-algorithm-monkeysort/
